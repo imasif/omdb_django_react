@@ -1,0 +1,220 @@
+@import "~antd/dist/antd.css";
+
+body {
+  background: #f0f2f5;
+}
+
+.ant-layout-content {
+  margin-top: 0;
+}
+
+.menuBar {
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 0 30px #f3f1f1;
+  background: #fff;
+}
+
+.menuBar .ant-menu {
+  background: none;
+}
+
+.logo {
+  width: auto;
+  float: left;
+}
+
+.logo a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+  text-transform: capitalize;
+}
+
+.menuCon {
+  width: 98%;
+}
+
+.menuCon .ant-menu-item {
+  padding: 0px 5px;
+}
+
+.menuCon .ant-menu-submenu-title {
+  padding: 10px 20px;
+}
+
+.menuCon .ant-menu-item a,
+.menuCon .ant-menu-submenu-title a {
+  padding: 10px 15px;
+}
+
+.menuCon .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.menuCon .leftMenu {
+  float: left;
+}
+
+.menuCon .rightMenu {
+  float: right;
+}
+
+.barsMenu {
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none;
+  background: none;
+}
+
+.barsBtn {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #1890ff;
+  position: relative;
+}
+
+.barsBtn:after,
+.barsBtn:before {
+  content: attr(x);
+  width: 20px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  background: #1890ff;
+}
+
+.barsBtn:after {
+  top: auto;
+  bottom: -6px;
+}
+
+.ant-drawer-body {
+  padding: 0;
+}
+
+.barsMenu > span {
+  display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+  display: inline-block;
+  width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .barsMenu {
+    display: inline-block;
+  }
+
+  .leftMenu,
+  .rightMenu {
+    display: none;
+  }
+
+  .logo a {
+    margin-left: -20px;
+  }
+
+  .menuCon .ant-menu-item,
+  .menuCon .ant-menu-submenu-title {
+    padding: 1px 20px;
+  }
+
+  .logo a {
+    padding: 10px 20px;
+  }
+}
+.ant-card {
+  box-shadow: 2px 2px 5px #ccc;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.ant-card-cover img {
+  width: 100%;
+}
+.ant-card-meta-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ant-card-meta-title a {
+  color: #717171;
+}
+.ant-card-meta-title a:hover {
+  color: #454545;
+}
+.rating {
+  background: #000;
+  border-radius: 5px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 10px auto;
+  width: 90%;
+}
+.moviePoularityPerc {
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+.searchInput {
+  border: 2px solid honeydew;
+  padding: 10px 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 5px 0 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.searchInput:focus {
+  outline: none;
+}
+.suggestionDropdown{
+  border-bottom: honeydew;
+  border-left: honeydew;
+  border-right: honeydew;
+  border-top: 1px solid #e6e6e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 2px 2px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 0px;
+  width: 100%;
+}
+.SuggestionItem {
+  padding: 8px;
+  text-align: left;
+  background-color: #fff;
+  cursor: pointer;
+}
+.clearSearch {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  color: grey;
+}
+.clearSearch:focus {
+  outline: none;
+}
