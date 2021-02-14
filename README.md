@@ -1,5 +1,6 @@
 == The movedb and omdb combined python(django) & reactjs app ==
 
+
 == How to install ==
 
 == Django App: ==
