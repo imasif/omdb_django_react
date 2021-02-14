@@ -77,7 +77,7 @@ export default class MovieDetails extends Component {
                                         </Text>
                                         <br/>
                                         <br/>
-                                        <Button type={this.props.currentuser.favorites.includes(this.props.id.toString()) ? "danger" : "default"} key={"fav_icon"+ this.props.id} title="mark as favorite?" shape="circle" icon={<HeartFilled />} size={'large'} />
+                                        <Button type={this.props.currentuser && this.props.currentuser.favorites.includes(this.props.id.toString()) ? "danger" : "default"} key={"fav_icon"+ this.props.id} title="mark as favorite?" shape="circle" icon={<HeartFilled />} size={'large'} />
                                         <br/>
                                         <br/>
                                         <Title level={5}>Overview</Title>
