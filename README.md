@@ -3,9 +3,11 @@
 ##How to install
 
 ###Django App:
+
     1. Create a mysql database naming `omdb_movies`
     2. inside `/omdb_movies_api/omdb_movies/settings.py` change `DATABASES` username, password
     3. cd to `/omdb_movies_api` install Virtual env:
+    
         1. On unix terminal run:
             `python3 -m venv env`
             `. venv/bin/activate`
@@ -20,5 +22,6 @@
     9. if everything goese ok, you will be able to browse: `http://127.0.0.1:8000/api/`
 
 ###React App:
+
     1. open a new terminal/powershell `omdb_movies_frontend` run `npm i && npm start` you'll see site on `http://localhost:3000`
         (if something went wrong delete node_modules & package-lock.json & yarn.lock rerun `npm i && npm start`)
