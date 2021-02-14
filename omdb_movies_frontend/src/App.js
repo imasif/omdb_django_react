@@ -54,7 +54,7 @@ export default class App extends Component {
 				<Navbar signout={data=>this.signout(data)} currentuser={this.state.currentuser} setModal1Visible={(data)=>this.setModal1Visible(data)} setModal2Visible={(data)=>this.setModal2Visible(data)} />
 				<Router>
 					<Home currentuserCB={currentuser=>this.setState({currentuser})} currentuser={this.state.currentuser} path="/"/>
-					<MovieDetails currentuser={this.state.currentuser} path="/movies/:id"/>
+					<MovieDetails currentuserCB={currentuser=>this.setState({currentuser})} currentuser={this.state.currentuser} path="/movies/:id"/>
 					<Favorites currentuser={this.state.currentuser} path="/favs"/>
 				</Router>
 

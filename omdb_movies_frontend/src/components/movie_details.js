@@ -27,6 +27,44 @@ export default class MovieDetails extends Component {
         })
     }
 
+    markFav(tmdb_id){
+        const self = this;
+        const user = self.props.currentuser;
+        const token = user['token'];
+        let user_id = user['url'].split('/');
+        user_id = parseInt(user_id[user_id.length - 2]);
+        console.log(user_id);
+        console.log(tmdb_id);
+
+        let url = 'http://localhost:8000/api';
+
+        fetch(url+'/favorites/',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": `Token ${token}`
+            },
+            body: JSON.stringify({tmdb_id,user: user_id})
+        }).then(res=> res.json())
+        .then(res=>{
+            if(Array.isArray(res.tmdb_id)){
+                self.props.errorCB(res.tmdb_id[0]);
+            }else{
+                fetch(url+'/users/current/',{
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Authorization": `Token ${token}`
+                    }
+                }).then(res=>res.json())
+                .then(res=> {
+                    res.token = token;
+                    window.localStorage.setItem('CurrentUser', JSON.stringify(res));
+                    self.props.currentuserCB(res);
+                })
+            }
+        })
+    }
+
 	render() {
         let {data} = this.state;
         let ratings;
@@ -77,7 +115,7 @@ export default class MovieDetails extends Component {
                                         </Text>
                                         <br/>
                                         <br/>
-                                        <Button type={this.props.currentuser && this.props.currentuser.favorites.includes(this.props.id.toString()) ? "danger" : "default"} key={"fav_icon"+ this.props.id} title="mark as favorite?" shape="circle" icon={<HeartFilled />} size={'large'} />
+                                        <Button type={this.props.currentuser && this.props.currentuser.favorites.includes(this.props.id.toString()) ? "danger" : "default"} key={"fav_icon"+ this.props.id} onClick={()=>this.markFav(this.props.id)}  title="mark as favorite?" shape="circle" icon={<HeartFilled />} size={'large'} />
                                         <br/>
                                         <br/>
                                         <Title level={5}>Overview</Title>

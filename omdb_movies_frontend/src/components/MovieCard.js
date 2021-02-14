@@ -60,7 +60,7 @@ const MovieCards = (props) => {
                         </Link>
                         ]}
                     actions={props.currentuser != undefined ? [
-                        props.currentuser.favorites.includes(props.item.id.toString()) ? <HeartFilled key={"fav_icon"+props.item.id} /> : <HeartOutlined key={"not_fav_icon"+props.item.id} onClick={()=>markFav(props.item.id)} title="mark as favorite?" />,
+                        props.currentuser.favorites.includes(props.item.id.toString()) ? <HeartFilled style={{color: '#ff4d4f'}} key={"fav_icon"+props.item.id} /> : <HeartOutlined key={"not_fav_icon"+props.item.id} onClick={()=>markFav(props.item.id)} title="mark as favorite?" />,
                         <Link  key={"view_details"+props.item.id} to={"/movies/"+props.item.id}>
                             <EyeOutlined key="view" title="details" />
                         </Link>
